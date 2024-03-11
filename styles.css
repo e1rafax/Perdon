@@ -1,54 +1,63 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
+body {
+    background-image: url('https://images.unsplash.com/photo-1567336247303-b7f8f5a2b4d0');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-  background-color: #87CEEB; /* Color de cielo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
 }
 
-#sunflower {
-  position: relative;
-  width: 200px;
-  height: 200px;
+.girasol {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: crecer 5s linear forwards;
 }
 
-.center {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: black; /* Color del centro */
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.centro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, black 50%, transparent 50%);
 }
 
-.petals {
-  position: absolute;
-  width: 200px;
-  height: 200px;
+.rama {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: green;
+    transform-origin: bottom center;
 }
 
-.petals div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #FFD700; /* Color de los pétalos */
-  border-radius: 50%;
+.rama1 {
+    transform: rotate(0deg) translateY(-50px);
 }
 
-.petals div:nth-child(odd) {
-  transform: rotate(18deg);
+.rama2 {
+    transform: rotate(30deg) translateY(-50px);
 }
 
-.petals div:nth-child(even) {
-  transform: rotate(36deg);
+.rama3 {
+    transform: rotate(60deg) translateY(-50px);
 }
+
+.rama4 {
+    transform: rotate(90deg) translateY(-50px);
+}
+
+.petalo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    border-radius: 50%;
+    transform-origin: bottom center;
+}
+
+.petalo1 {
+    transform: rotate(0deg) translateY(-100px);
