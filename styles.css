@@ -4,59 +4,45 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background-color: #87CEEB;
+  background-color: #fff3cd; /* Color de fondo amarillo claro */
 }
 
 .girasol-container {
   position: relative;
 }
 
-.raiz {
-  position: absolute;
-  bottom: 0;
-  width: 10px;
-  height: 60px;
-  background-color: #8B4513;
-  border-radius: 50% 50% 0 0;
-}
-
-.tallo {
-  position: absolute;
-  bottom: 60px;
-  width: 20px;
-  height: 100px;
-  background-color: #228B22;
-  border-radius: 50% 50% 0 0;
+.girasol {
+  width: 200px;
+  height: 200px;
+  position: relative;
 }
 
 .centro {
-  position: absolute;
-  bottom: 120px;
-  width: 40px;
-  height: 40px;
-  background-color: #FFD700;
-  border-radius: 50%;
-}
-
-.petalos {
-  position: absolute;
-  bottom: 160px;
-}
-
-.petalo {
-  width: 40px;
+  width: 80px;
   height: 80px;
-  background-color: #FFD700;
+  background-color: #ffd700; /* Color amarillo */
   border-radius: 50%;
   position: absolute;
-  transform-origin: 50% 100%;
+  top: 60px;
+  left: 60px;
+  z-index: 2;
 }
 
-.petalo:nth-child(1) { transform: rotate(45deg); }
-.petalo:nth-child(2) { transform: rotate(90deg); }
-.petalo:nth-child(3) { transform: rotate(135deg); }
-.petalo:nth-child(4) { transform: rotate(180deg); }
-.petalo:nth-child(5) { transform: rotate(225deg); }
-.petalo:nth-child(6) { transform: rotate(270deg); }
-.petalo:nth-child(7) { transform: rotate(315deg); }
-.petalo:nth-child(8) { transform: rotate(360deg); }
+.petal {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ffcc4d; /* Color amarillo claro */
+  border-radius: 50%;
+  transform-origin: 50% 100%;
+  z-index: 1;
+}
+
+.petal1 { top: 0; left: 50px; }
+.petal2 { top: 50px; left: 100px; }
+.petal3 { top: 100px; left: 50px; }
+.petal4 { top: 150px; left: 0; }
+.petal5 { top: 100px; left: -50px; }
+.petal6 { top: 50px; left: -100px; }
+.petal7 { top: 0; left: -50px; }
+.petal8 { top: 50px; left: 0; }
