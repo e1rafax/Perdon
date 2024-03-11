@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var frog = document.getElementById('frog');
-    var sunflower = document.getElementById('sunflower');
-    var message = document.getElementById('message');
-
-    frog.style.display = 'block';
-    sunflower.style.display = 'block';
-
-    setTimeout(function() {
-        sunflower.style.transform = 'translate(-50%, -50%) scale(1)';
-        setTimeout(function() {
-            message.style.display = 'block';
-            message.style.opacity = '1';
-        }, 2000); // 2 segundos después de que el girasol se abra completamente
-    }, 2000); // 2 segundos después de que la página se cargue
+  createPetals();
+  setTimeout(function() {
+    document.getElementById('mensaje').style.opacity = '1';
+  }, 5000); // Show message after 5 seconds
 });
+
+function createPetals() {
+  const petalContainer = document.getElementById('petal-container');
+  for (let i = 0; i < 10; i++) {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    petal.style.left = `${i * 10}px`;
+    petalContainer.appendChild(petal);
+  }
+}
