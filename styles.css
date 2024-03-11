@@ -9,6 +9,7 @@ body, html {
     width: 200px;
     height: 400px;
     margin: 50px auto;
+    animation: growSunflower 5s forwards;
 }
 
 .stem {
@@ -29,6 +30,8 @@ body, html {
     bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 0;
+    animation: bloomFlower 3s forwards 2s;
 }
 
 .petals {
@@ -39,10 +42,30 @@ body, html {
     left: 0;
     background-image: url('petal.png'); /* Reemplaza 'petal.png' con la ruta de tu imagen de pétalos */
     background-size: cover;
-    animation: animate-petals 5s infinite;
+    animation: spinPetals 5s infinite linear;
 }
 
-@keyframes animate-petals {
+@keyframes growSunflower {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 400px;
+    }
+}
+
+@keyframes bloomFlower {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spinPetals {
     0% {
         transform: rotate(0deg);
     }
