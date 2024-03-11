@@ -21,8 +21,8 @@
     
     .sunflower {
       position: relative;
-      width: 0;
-      height: 0;
+      width: 300px;
+      height: 300px;
     }
     
     .center {
@@ -60,15 +60,62 @@
       border-radius: 50%;
       transform-origin: 50% 100%;
       z-index: 1;
+    }
+    
+    .petal:nth-child(odd) {
+      transform: rotate(30deg);
+    }
+    
+    .petal:nth-child(even) {
+      transform: rotate(60deg);
+    }
+    
+    .petal:nth-child(3n) {
+      transform: rotate(90deg);
+    }
+
+    .petal:nth-child(4n) {
+      transform: rotate(120deg);
+    }
+
+    .petal:nth-child(5n) {
+      transform: rotate(150deg);
+    }
+
+    .petal:nth-child(6n) {
+      transform: rotate(180deg);
+    }
+
+    .petal:nth-child(7n) {
+      transform: rotate(210deg);
+    }
+
+    .petal:nth-child(8n) {
+      transform: rotate(240deg);
+    }
+
+    .petal:nth-child(9n) {
+      transform: rotate(270deg);
+    }
+
+    .petal:nth-child(10n) {
+      transform: rotate(300deg);
+    }
+
+    .petal:nth-child(11n) {
+      transform: rotate(330deg);
+    }
+
+    .petal.open {
       animation: petalOpen 6s ease-in-out infinite alternate;
     }
     
     @keyframes petalOpen {
       from {
-        transform: rotate(0deg) translateY(0);
+        transform: translateY(0) scale(1);
       }
       to {
-        transform: rotate(20deg) translateY(-100px);
+        transform: translateY(-50px) scale(1.2);
       }
     }
   </style>
@@ -77,19 +124,19 @@
   <div class="container">
     <div class="sunflower">
       <div class="center">Perdón Cristian</div>
-      <div class="petal" style="transform: rotate(30deg)"></div>
-      <div class="petal" style="transform: rotate(60deg)"></div>
-      <div class="petal" style="transform: rotate(90deg)"></div>
-      <div class="petal" style="transform: rotate(120deg)"></div>
-      <div class="petal" style="transform: rotate(150deg)"></div>
-      <div class="petal" style="transform: rotate(180deg)"></div>
-      <div class="petal" style="transform: rotate(210deg)"></div>
-      <div class="petal" style="transform: rotate(240deg)"></div>
-      <div class="petal" style="transform: rotate(270deg)"></div>
-      <div class="petal" style="transform: rotate(300deg)"></div>
-      <div class="petal" style="transform: rotate(330deg)"></div>
+      <div class="petal"></div>
+      <div class="petal open"></div>
+      <div class="petal"></div>
+      <div class="petal open"></div>
+      <div class="petal"></div>
+      <div class="petal open"></div>
+      <div class="petal"></div>
+      <div class="petal open"></div>
+      <div class="petal"></div>
+      <div class="petal open"></div>
+      <div class="petal"></div>
+      <div class="petal open"></div>
     </div>
   </div>
 </body>
 </html>
-
