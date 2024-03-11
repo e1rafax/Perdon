@@ -38,11 +38,11 @@ body {
   z-index: 1;
 }
 
-.petal1 { top: 0; left: 50px; }
-.petal2 { top: 50px; left: 100px; }
-.petal3 { top: 100px; left: 50px; }
-.petal4 { top: 150px; left: 0; }
-.petal5 { top: 100px; left: -50px; }
-.petal6 { top: 50px; left: -100px; }
-.petal7 { top: 0; left: -50px; }
-.petal8 { top: 50px; left: 0; }
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(45deg); }
+.petal:nth-child(3) { transform: rotate(90deg); }
+.petal:nth-child(4) { transform: rotate(135deg); }
+.petal:nth-child(5) { transform: rotate(180deg); }
+.petal:nth-child(6) { transform: rotate(225deg); }
+.petal:nth-child(7) { transform: rotate(270deg); }
+.petal:nth-child(8) { transform: rotate(315deg); }
