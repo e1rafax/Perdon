@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-    document.getElementById('sunflower').classList.add('grow');
-  }, 1000);
-
-  setTimeout(function() {
-    document.getElementById('sunflower').classList.add('bloom');
-  }, 3000);
+    setTimeout(function() {
+        let petals = document.querySelectorAll('.petal');
+        petals.forEach((petal, index) => {
+            petal.style.transform = `rotate(${index * 45}deg)`;
+        });
+    }, 5000);
 });
+
 
