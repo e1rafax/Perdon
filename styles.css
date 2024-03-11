@@ -18,8 +18,8 @@ body, html {
 
 #girasol {
   position: relative;
-  width: 150px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 #centro {
@@ -35,36 +35,28 @@ body, html {
 
 #petal-container {
   position: absolute;
-  top: 60px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .petal {
-  width: 60px;
-  height: 120px;
+  width: 100px;
+  height: 200px;
   background: #FFD700; /* Yellow */
   position: absolute;
   bottom: 0;
   left: 0;
-  transform-origin: 50% 100%;
   border-radius: 50%;
-}
-
-.petal:nth-child(odd) {
-  transform: rotate(15deg);
-}
-
-.petal:nth-child(even) {
-  transform: rotate(-15deg);
+  animation: petal-fall 4s infinite ease-in-out alternate;
 }
 
 @keyframes petal-fall {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(-100%) rotate(0deg);
   }
   100% {
-    transform: translateY(200px) rotate(5deg);
+    transform: translateY(100%) rotate(360deg);
   }
 }
 
@@ -79,4 +71,3 @@ body, html {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-
