@@ -1,32 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Inicialmente, ocultamos la flor y la raíz
-  document.querySelector(".flor").style.display = "none";
-  document.querySelector(".raiz").style.display = "none";
+document.addEventListener("DOMContentLoaded", function() {
+  // Define los elementos del girasol
+  var raiz = document.querySelector('.raiz');
+  var tallo = document.querySelector('.tallo');
+  var centro = document.querySelector('.centro');
+  var petalos = document.querySelectorAll('.petalo');
 
-  // Mostrar la raíz después de 1 segundo
-  setTimeout(function () {
-    document.querySelector(".raiz").style.display = "block";
-  }, 1000);
+  // Oculta los elementos del girasol al principio
+  anime.set([raiz, tallo, centro, petalos], { scaleY: 0, scaleX: 0 });
 
-  // Mostrar la flor después de 2 segundos
-  setTimeout(function () {
-    document.querySelector(".flor").style.display = "block";
-  }, 2000);
-
-  // Animación de crecimiento del tallo
-  anime({
-    targets: '.tallo',
-    translateY: ['-200px', '0px'],
-    duration: 2000,
-    easing: 'easeOutElastic'
-  });
-
-  // Animación de apertura de los pétalos
-  anime({
-    targets: '.petalos',
-    scale: [0, 1],
-    duration: 2000,
+  // Define la secuencia de animaciones para el crecimiento y la floración
+  var girasolTimeline = anime.timeline({
     easing: 'easeOutElastic',
-    delay: 2000
+    duration: 2000
   });
+
+  girasolTimeline
+    .add({
+      targets: raiz,
+      scaleY: 1,
+      scaleX: 1
+    })
+    .add({
+      targets: tallo,
+      scaleY: 1,
+      scaleX: 1
+    }, '-=1500')
+    .add({
+      targets: centro,
+      scaleY: 1,
+      scaleX: 1
+    }, '-=1000')
+    .add({
+      targets: petalos,
+      scaleY: 1,
+      scaleX: 1,
+      delay: anime.stagger(100)
+    }, '-=800');
 });
