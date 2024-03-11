@@ -10,8 +10,9 @@ function createPetals() {
   for (let i = 0; i < 10; i++) {
     const petal = document.createElement('div');
     petal.classList.add('petal');
-    petal.style.left = `${i * 10}px`;
+    petal.style.transform = `rotate(${i * 36}deg)`;
     petalContainer.appendChild(petal);
   }
 }
+
 
