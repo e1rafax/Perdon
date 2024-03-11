@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var petalElements = document.querySelectorAll('.petal');
+  setTimeout(function() {
+    document.getElementById('sunflower').classList.add('grow');
+  }, 1000);
 
-  anime({
-    targets: petalElements,
-    rotate: '+=360deg',
-    easing: 'linear',
-    duration: 5000,
-    loop: true
-  });
+  setTimeout(function() {
+    document.getElementById('sunflower').classList.add('bloom');
+  }, 3000);
 });
+
