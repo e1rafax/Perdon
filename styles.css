@@ -1,63 +1,31 @@
-body {
-    background-image: url('https://images.unsplash.com/photo-1567336247303-b7f8f5a2b4d0');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+window.onload = function() {
+  animateSunflower();
+};
 
-.container {
-    position: relative;
-}
+function animateSunflower() {
+  const sunflower = document.getElementById('sunflower');
+  const petals = document.querySelector('.petals');
+  const branches = document.querySelector('.branches');
 
-.girasol {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    animation: crecer 5s linear forwards;
-}
+  // Animación de crecimiento
+  sunflower.style.transform = 'scale(0)';
+  sunflower.style.transition = 'transform 2s ease-in-out';
 
-.centro {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, black 50%, transparent 50%);
-}
+  setTimeout(function() {
+    sunflower.style.transform = 'scale(1)';
+  }, 500);
 
-.rama {
-    position: absolute;
-    width: 100%;
-    height: 10px;
-    background-color: green;
-    transform-origin: bottom center;
-}
+  // Creación de pétalos
+  for (let i = 0; i < 10; i++) {
+    const petal = document.createElement('div');
+    petal.style.transform = `rotate(${i * 36}deg) translate(130px) rotate(-${i * 36}deg)`;
+    petals.appendChild(petal);
+  }
 
-.rama1 {
-    transform: rotate(0deg) translateY(-50px);
+  // Creación de ramas
+  for (let i = 0; i < 12; i++) {
+    const branch = document.createElement('div');
+    branch.style.transform = `rotate(${i * 30}deg) translate(110px) rotate(-${i * 30}deg)`;
+    branches.appendChild(branch);
+  }
 }
-
-.rama2 {
-    transform: rotate(30deg) translateY(-50px);
-}
-
-.rama3 {
-    transform: rotate(60deg) translateY(-50px);
-}
-
-.rama4 {
-    transform: rotate(90deg) translateY(-50px);
-}
-
-.petalo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: yellow;
-    border-radius: 50%;
-    transform-origin: bottom center;
-}
-
-.petalo1 {
-    transform: rotate(0deg) translateY(-100px);
