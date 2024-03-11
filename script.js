@@ -1,14 +1,13 @@
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-  const sunflower = document.querySelector('.sunflower');
-  const petals = document.querySelector('.petals');
-
-  function updateSunflower() {
-    const time = new Date().getTime();
-    const rotation = (time / 1000) * 0.1; // Adjust the speed of the rotation here
-    petals.style.transform = `rotate(${rotation}deg)`;
-    requestAnimationFrame(updateSunflower);
-  }
-
-  requestAnimationFrame(updateSunflower);
+document.addEventListener("DOMContentLoaded", function () {
+    // Animación de crecimiento y florecimiento del girasol
+    setTimeout(function () {
+        document.querySelector('.sunflower').classList.add('grow');
+        setTimeout(function () {
+            document.querySelector('.flower').classList.add('bloom');
+            setTimeout(function () {
+                document.querySelector('.petals').classList.add('animate-petals');
+            }, 1000);
+        }, 2000);
+    }, 1000);
 });
+
