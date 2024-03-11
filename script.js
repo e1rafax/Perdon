@@ -1,32 +1,32 @@
-window.onload = function() {
-  animateSunflower();
-};
+document.addEventListener("DOMContentLoaded", function () {
+  // Inicialmente, ocultamos la flor y la raíz
+  document.querySelector(".flor").style.display = "none";
+  document.querySelector(".raiz").style.display = "none";
 
-function animateSunflower() {
-  const sunflower = document.getElementById('sunflower');
-  const petals = document.querySelector('.petals');
-  const branches = document.querySelector('.branches');
+  // Mostrar la raíz después de 1 segundo
+  setTimeout(function () {
+    document.querySelector(".raiz").style.display = "block";
+  }, 1000);
 
-  // Animación de crecimiento
-  sunflower.style.transform = 'scale(0)';
-  sunflower.style.transition = 'transform 2s ease-in-out';
+  // Mostrar la flor después de 2 segundos
+  setTimeout(function () {
+    document.querySelector(".flor").style.display = "block";
+  }, 2000);
 
-  setTimeout(function() {
-    sunflower.style.transform = 'scale(1)';
-  }, 500);
+  // Animación de crecimiento del tallo
+  anime({
+    targets: '.tallo',
+    translateY: ['-200px', '0px'],
+    duration: 2000,
+    easing: 'easeOutElastic'
+  });
 
-  // Creación de pétalos
-  for (let i = 0; i < 10; i++) {
-    const petal = document.createElement('div');
-    petal.style.transform = `rotate(${i * 36}deg) translate(130px) rotate(-${i * 36}deg)`;
-    petals.appendChild(petal);
-  }
-
-  // Creación de ramas
-  for (let i = 0; i < 12; i++) {
-    const branch = document.createElement('div');
-    branch.style.transform = `rotate(${i * 30}deg) translate(110px) rotate(-${i * 30}deg)`;
-    branches.appendChild(branch);
-  }
-}
-
+  // Animación de apertura de los pétalos
+  anime({
+    targets: '.petalos',
+    scale: [0, 1],
+    duration: 2000,
+    easing: 'easeOutElastic',
+    delay: 2000
+  });
+});
