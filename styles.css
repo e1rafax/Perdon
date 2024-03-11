@@ -1,64 +1,62 @@
-body, html {
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  height: 100%;
+  background-color: #87CEEB;
 }
 
-.girasol {
+.girasol-container {
   position: relative;
-  margin: auto;
-  width: 200px;
-  height: 400px;
 }
 
 .raiz {
   position: absolute;
   bottom: 0;
   width: 10px;
-  height: 50px;
-  background-color: brown;
+  height: 60px;
+  background-color: #8B4513;
+  border-radius: 50% 50% 0 0;
 }
 
 .tallo {
   position: absolute;
-  bottom: 50px;
+  bottom: 60px;
   width: 20px;
-  height: 200px;
-  background-color: green;
+  height: 100px;
+  background-color: #228B22;
+  border-radius: 50% 50% 0 0;
 }
 
-.flor {
+.centro {
   position: absolute;
-  bottom: 250px;
-  width: 200px;
-  height: 150px;
-  background-color: yellow;
+  bottom: 120px;
+  width: 40px;
+  height: 40px;
+  background-color: #FFD700;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 .petalos {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: orange;
-  border-radius: 50%;
-  transform-origin: center;
+  bottom: 160px;
 }
 
-.petalos:before, .petalos:after {
-  content: '';
+.petalo {
+  width: 40px;
+  height: 80px;
+  background-color: #FFD700;
+  border-radius: 50%;
   position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: orange;
-  border-radius: 50%;
+  transform-origin: 50% 100%;
 }
 
-.petalos:before {
-  transform: rotate(45deg);
-}
-
-.petalos:after {
-  transform: rotate(-45deg);
-}
+.petalo:nth-child(1) { transform: rotate(45deg); }
+.petalo:nth-child(2) { transform: rotate(90deg); }
+.petalo:nth-child(3) { transform: rotate(135deg); }
+.petalo:nth-child(4) { transform: rotate(180deg); }
+.petalo:nth-child(5) { transform: rotate(225deg); }
+.petalo:nth-child(6) { transform: rotate(270deg); }
+.petalo:nth-child(7) { transform: rotate(315deg); }
+.petalo:nth-child(8) { transform: rotate(360deg); }
