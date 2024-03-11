@@ -4,111 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Girasol Animado</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: linear-gradient(to bottom, #87CEEB, #1E90FF);
-    }
-    
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    
-    .sunflower {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      animation: grow 4s ease-in-out forwards;
-    }
-    
-    .center {
-      width: 100px;
-      height: 100px;
-      background: black;
-      border-radius: 50%;
-      position: absolute;
-      top: calc(50% - 50px);
-      left: calc(50% - 50px);
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 20px;
-      font-family: Arial, sans-serif;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out forwards;
-    }
-    
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-    
-    .petal {
-      position: absolute;
-      width: 80px;
-      height: 150px;
-      background: #FFD700;
-      border-radius: 50%;
-      transform-origin: 50% 100%;
-      z-index: 1;
-      animation: petalOpen 4s ease-in-out forwards;
-    }
-    
-    .petal:nth-child(odd) {
-      transform: rotate(20deg);
-    }
-    
-    .petal:nth-child(even) {
-      transform: rotate(50deg);
-    }
-
-    @keyframes petalOpen {
-      from {
-        transform: translateY(1000px) scale(0);
-      }
-      to {
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @keyframes grow {
-      from {
-        transform: scale(0);
-      }
-      to {
-        transform: scale(1);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <div class="sunflower">
-      <div class="center">Perdón Cristian</div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
-      <div class="petal"></div>
+    <div id="sunflower">
+      <div class="center"></div>
+      <div class="petals"></div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
