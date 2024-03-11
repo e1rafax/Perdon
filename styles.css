@@ -6,11 +6,9 @@ body, html {
 
 .sunflower {
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 200px;
     height: 400px;
+    margin: 50px auto;
 }
 
 .stem {
@@ -36,9 +34,19 @@ body, html {
 .petals {
     width: 150px;
     height: 150px;
-    background-image: url('petal.png'); /* Añade la imagen de un pétalo */
-    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
+    background-image: url('petal.png'); /* Reemplaza 'petal.png' con la ruta de tu imagen de pétalos */
+    background-size: cover;
+    animation: animate-petals 5s infinite;
+}
+
+@keyframes animate-petals {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
