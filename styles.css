@@ -1,71 +1,83 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
+/* styles.css */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5dc;
+  margin: 0;
+}
+
+.sunflower-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
 }
 
 .sunflower {
-    position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
 }
 
 .stem {
-    width: 10px;
+  position: absolute;
+  width: 10px;
+  height: 150px;
+  background-color: #8b4513;
+  border-radius: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: growStem 5s linear infinite;
+}
+
+.head {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.petals {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#fde64b, #ffdd00);
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform-origin: bottom;
+  animation: bloom 5s linear infinite;
+}
+
+.center-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #8b4513;
+  clip-path: circle(30% at 50% 50%);
+}
+
+@keyframes growStem {
+  0% {
     height: 150px;
-    background-color: #008000;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px 5px 0 0;
-}
-
-.flower {
-    width: 100px;
-    height: 100px;
-    background-color: #FFD700;
-    border-radius: 50%;
-    position: relative;
-    animation: grow 5s ease-in-out forwards;
-}
-
-.petal {
-    width: 20px;
-    height: 60px;
-    background-color: #FF4500;
-    position: absolute;
-    top: 10px;
-    left: 40px;
-    transform-origin: 50% 80%;
-    animation: bloom 5s ease-in-out forwards;
-}
-
-.center {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    border-radius: 50%;
-}
-
-@keyframes grow {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
+  }
+  100% {
+    height: 250px;
+  }
 }
 
 @keyframes bloom {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
