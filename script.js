@@ -14,3 +14,4 @@ function createPetals() {
     petalContainer.appendChild(petal);
   }
 }
+
